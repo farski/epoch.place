@@ -2,6 +2,7 @@
 // 1234567890 = 2009-02-13T23:31:30+00:00
 
 const $ = i => document.getElementById(i);
+const $c = c => document.getElementsByClassName(c);
 let nf = true;
 
 // The input normalized to the number of milliseconds since the Unix epoch
@@ -99,6 +100,17 @@ function toMs() {
 	input();
 }
 
+function copy(text) {
+	const el = document.createElement('textarea');
+	document.getElementById('v').appendChild(el);
+	el.textContent = text;
+
+	window.getSelection().removeAllRanges();
+	el.select();
+	document.execCommand('copy');
+	document.getElementById('v').removeChild(el);
+}
+
 function boot() {
 	const i = $('i');
 	const n = $('n');
@@ -113,6 +125,13 @@ function boot() {
 	n.addEventListener('mouseout', resume);
 	$('i-s').addEventListener('click', toS);
 	$('i-ms').addEventListener('click', toMs);
+
+	const copiers = $c('cp');
+	for (let i = 0; i < copiers.length; i++) {
+		copiers.item(i).addEventListener('click', e => copy(e.target.innerText));
+	}
+
+	input();
 
 	setInterval(now, 25);
 }
