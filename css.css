@@ -2,49 +2,113 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #f4f4f4;
   border: 0;
-  color: #121212;
+  color: #060606;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 100%;
   margin: 0;
   padding: 0;
 }
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #f4f4f4;
+  }
+}
+
+#v {
+  left: -100vw;
+  position: absolute;
+  top: 0;
+}
 
 form {
-  background: red;
+  margin: 6em 0 0 0;
 }
 
 fieldset {
-  background: green;
   border: none;
+  margin: 0 auto;
+  width: 640px;
 }
 
 #i {
-  padding: 0.5em;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #121212;
+  display: block;
   font-size: 3rem;
+  line-height: 3rem;
+  outline: none;
+  padding: 0.5em 0.5em 0.125em 0.5em;
 }
+
+@media (prefers-color-scheme: dark) {
+  #i {
+    color: #f4f4f4;
+    border-bottom-color: #f4f4f4;
+  }
+}
+
 #i::placeholder {
   font-size: 1.25rem;
   font-style: italic;
 }
 
+@media (prefers-color-scheme: dark) {
+  #i::placeholder {
+    color: #bbb;
+  }
+}
+
 #i-s, #i-ms {
+  background: none;
   border: none;
-  color: red;
+  color: #060606;
+  cursor: pointer;
+  float: right;
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  #i-s, #i-ms {
+    color: #f4f4f4;
+  }
 }
 
 #i-s.on, #i-ms.on {
-  background: blue;
+  background: #121212;
+  color: #f4f4f4;
+  cursor: default;
+  opacity: 1;
 }
+
+@media (prefers-color-scheme: dark) {
+  #i-s.on, #i-ms.on {
+    background: #f4f4f4;
+    color: #121212;
+  }
+}
+
+.cp {
+  cursor: copy;
+}
+
+#o {
+  margin: 0 auto;
+  width: 640px;
+}
+
+#o-unix-s::before { content: 'Seconds: '; }
+#o-unix-s-d::before { content: 'Decimal: '; }
+#o-unix-ms::before { content: 'Milliseconds: '; }
+#o-iso-8601-utc::before  { content: 'UTC: '; }
+#o-iso-8601-loc::before  { content: 'Local: '; }
 
 #n {
   background: rebeccapurple;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-    color: #f1f1f1;
-  }
-}
+#d{display: none;}
