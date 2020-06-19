@@ -37,9 +37,9 @@ function input() {
 	// Save the input to the URL
 	window.location.hash = encodeURIComponent(i);
 
-	$('i-s').hidden = false;
+	$('i-s').style.visibility = 'visible';
 	$('i-s').classList.remove('on');
-	$('i-ms').hidden = false;
+	$('i-ms').style.visibility = 'visible';
 	$('i-ms').classList.remove('on');
 
 	// Detect input format
@@ -52,8 +52,8 @@ function input() {
 		ms = +i.replace('ms', '');
 		$('i-ms').classList.add('on');
 	} else {
-		$('i-s').hidden = true;
-		$('i-ms').hidden = true;
+		$('i-s').style.visibility = 'hidden';
+		$('i-ms').style.visibility = 'hidden';
 		ms = chrono.parseDate(i);
 	}
 
