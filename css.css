@@ -30,7 +30,7 @@ form {
 fieldset {
   border: none;
   margin: 0 auto;
-  width: 640px;
+  width: 720px;
 }
 
 #i {
@@ -42,6 +42,7 @@ fieldset {
   line-height: 3rem;
   outline: none;
   padding: 0.5em 0.5em 0.125em 0.5em;
+  width: 720px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -97,18 +98,85 @@ fieldset {
 }
 
 #o {
-  margin: 0 auto;
-  width: 640px;
+  margin: 2rem auto 0;
+  width: 800px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, auto);
+  grid-gap: 0;
+  grid-template-areas:
+    "o-unix-s l-unix-s n-unix-s"
+    "o-unix-s d-unix-s n-unix-s"
+
+    "o-unix-s-d l-unix-s-d n-unix-s-d"
+    "o-unix-s-d d-unix-s-d n-unix-s-d"
+
+    "o-unix-ms l-unix-ms n-unix-ms"
+    "o-unix-ms d-unix-ms n-unix-ms"
+
+    "o-iso-8601-utc l-iso-8601-utc n-iso-8601-utc"
+    "o-iso-8601-utc d-iso-8601-utc n-iso-8601-utc"
+
+    "o-iso-8601-loc l-iso-8601-loc n-iso-8601-loc"
+    "o-iso-8601-loc d-iso-8601-loc n-iso-8601-loc";
 }
 
-#o-unix-s::before { content: 'Seconds: '; }
-#o-unix-s-d::before { content: 'Decimal: '; }
-#o-unix-ms::before { content: 'Milliseconds: '; }
-#o-iso-8601-utc::before  { content: 'UTC: '; }
-#o-iso-8601-loc::before  { content: 'Local: '; }
+#o p {
+  margin: 0;
+}
+
+#o *:nth-child(4n-3) {
+  text-align: left;
+}
+
+#o *:nth-child(4n-1) {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+#o *:nth-child(4n-1)::before {
+  content: 'Δ ';
+}
+
+#o *:nth-child(4n) {
+  text-align: right;
+}
+
+#o label {
+  display: block;
+  font-size: .75rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#o-unix-s { grid-area: o-unix-s; }
+#l-unix-s { grid-area: l-unix-s; }
+#d-unix-s { grid-area: d-unix-s; }
+#n-unix-s { grid-area: n-unix-s; }
+
+#o-unix-s-d { grid-area: o-unix-s-d; }
+#l-unix-s-d { grid-area: l-unix-s-d; }
+#d-unix-s-d { grid-area: d-unix-s-d; }
+#n-unix-s-d { grid-area: n-unix-s-d; }
+
+#o-unix-ms { grid-area: o-unix-ms; }
+#l-unix-ms { grid-area: l-unix-ms; }
+#d-unix-ms { grid-area: d-unix-ms; }
+#n-unix-ms { grid-area: n-unix-ms; }
+
+#o-iso-8601-utc { grid-area: o-iso-8601-utc; }
+#l-iso-8601-utc { grid-area: l-iso-8601-utc; }
+#d-iso-8601-utc { grid-area: d-iso-8601-utc; visibility: hidden; }
+#n-iso-8601-utc { grid-area: n-iso-8601-utc; }
+
+#o-iso-8601-loc { grid-area: o-iso-8601-loc; }
+#l-iso-8601-loc { grid-area: l-iso-8601-loc; }
+#d-iso-8601-loc { grid-area: d-iso-8601-loc; visibility: hidden;  }
+#n-iso-8601-loc { grid-area: n-iso-8601-loc; }
 
 #n {
   background: rebeccapurple;
 }
 
-#d{display: none;}
+#n,#d{display: none;}

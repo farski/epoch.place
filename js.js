@@ -113,7 +113,7 @@ function copy(text) {
 
 function boot() {
 	const i = $('i');
-	const n = $('n');
+	const o = $('o');
 
 	if (window.location.hash) {
 		i.value = decodeURIComponent(window.location.hash.substring(1));
@@ -121,8 +121,8 @@ function boot() {
 	}
 
 	i.addEventListener('input', input);
-	n.addEventListener('mouseover', pause);
-	n.addEventListener('mouseout', resume);
+	o.addEventListener('mouseover', pause);
+	o.addEventListener('mouseout', resume);
 	$('i-s').addEventListener('click', toS);
 	$('i-ms').addEventListener('click', toMs);
 
@@ -133,6 +133,7 @@ function boot() {
 
 	input();
 
+	now();
 	setInterval(now, 25);
 }
 
