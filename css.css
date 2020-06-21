@@ -155,6 +155,13 @@ fieldset {
 #d-unix-s { grid-area: d-unix-s; }
 #n-unix-s { grid-area: n-unix-s; }
 
+#n-unix-s::before {
+  content: 'Now: ';
+  font-size: .65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 #o-unix-s-d { grid-area: o-unix-s-d; }
 #l-unix-s-d { grid-area: l-unix-s-d; }
 #d-unix-s-d { grid-area: d-unix-s-d; }
