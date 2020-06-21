@@ -176,9 +176,15 @@ fieldset {
 #n-iso-8601-loc { grid-area: n-iso-8601-loc; }
 
 a[href='https://github.com/farski/epoch.place'] {
-  color: white;
+  color: #060606;
   display: block;
   margin-top: 5rem;
   text-align: center;
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  a[href='https://github.com/farski/epoch.place'] {
+    color: #f4f4f4;
+  }
 }
