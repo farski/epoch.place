@@ -175,8 +175,10 @@ fieldset {
 #d-iso-8601-loc { grid-area: d-iso-8601-loc; visibility: hidden;  }
 #n-iso-8601-loc { grid-area: n-iso-8601-loc; }
 
-#n {
-  background: rebeccapurple;
+a[href='https://github.com/farski/epoch.place'] {
+  color: white;
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+  text-decoration: none;
 }
-
-#n,#d{display: none;}
