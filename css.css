@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/Inconsolata/Inconsolata-VariableFont_wdth,wght.woff2') format('woff2-variations');
+  font-weight: 125 950;
+  font-style: normal;
+}
+
 html {
 }
 
@@ -123,6 +130,7 @@ fieldset {
 }
 
 #o p {
+  font-family: 'Inconsolata';
   margin: 0;
 }
 
