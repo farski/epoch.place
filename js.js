@@ -75,13 +75,13 @@ function now() {
 	const now = new Date;
 
 	$('n-unix-s').innerText = Math.floor(+now / 1000.0);
-	$('n-unix-s-d').innerText = (+now / 1000.0);
+	$('n-unix-s-d').innerText = (+now / 1000.0).toFixed(3);
 	$('n-unix-ms').innerText = Math.floor(+now);
 	$('n-iso-8601-utc').innerText = (now.toISOString());
 	$('n-iso-8601-loc').innerText = (dateToLocalISOString(now));
 
 	$('d-unix-s').innerText = Math.abs(Math.ceil((ms - now) / 1000.0));
-	$('d-unix-s-d').innerText = Math.abs((ms - now) / 1000.0);
+	$('d-unix-s-d').innerText = Math.abs((ms - now) / 1000.0).toFixed(3);
 	$('d-unix-ms').innerText = Math.abs(ms - now);
 }
 
